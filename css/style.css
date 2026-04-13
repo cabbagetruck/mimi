@@ -1,0 +1,141 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #181818;
+  font-family: 'DungGeunMo', monospace, sans-serif;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* ===== App Container ===== */
+#app {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ===== Page Sections ===== */
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Canvas ===== */
+.page canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* ===== Text Overlay ===== */
+.text-overlay {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 0 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.typing-text {
+  font-family: 'DungGeunMo', monospace;
+  font-size: clamp(18px, 5.5vw, 26px);
+  color: #F8F8F8;
+  line-height: 1.6;
+  text-shadow:
+    2px 2px 0 #181818,
+    -1px -1px 0 #181818,
+    1px -1px 0 #181818,
+    -1px 1px 0 #181818,
+    0 2px 0 #181818;
+  min-height: 2.4em;
+  white-space: pre-wrap;
+}
+
+.typing-text::after {
+  content: '▌';
+  animation: blink-cursor 0.6s steps(1) infinite;
+  color: #F0D020;
+}
+
+.typing-text.done::after {
+  content: '';
+  animation: none;
+}
+
+@keyframes blink-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ===== Next Button ===== */
+.next-btn {
+  position: relative;
+  z-index: 10;
+  font-family: 'DungGeunMo', monospace;
+  font-size: clamp(16px, 4.5vw, 22px);
+  color: #181818;
+  background: #F0D020;
+  border: none;
+  padding: 12px 48px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  /* Pixel border effect */
+  box-shadow:
+    4px 0 0 0 #A06020,
+    -4px 0 0 0 #A06020,
+    0 4px 0 0 #A06020,
+    0 -4px 0 0 #A06020,
+    4px 4px 0 0 #181818,
+    -4px -4px 0 0 #181818,
+    4px -4px 0 0 #181818,
+    -4px 4px 0 0 #181818;
+}
+
+.next-btn.visible {
+  opacity: 1;
+}
+
+.next-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    2px 0 0 0 #A06020,
+    -2px 0 0 0 #A06020,
+    0 2px 0 0 #A06020,
+    0 -2px 0 0 #A06020;
+}

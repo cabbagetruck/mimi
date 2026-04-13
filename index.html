@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Happy Birthday Mimi!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DungGeunMo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Page 1 -->
+    <section class="page active" id="page-1">
+      <canvas id="canvas-1"></canvas>
+      <div class="text-overlay">
+        <p class="typing-text" data-text="미미 생일축하해!"></p>
+      </div>
+      <button class="next-btn" data-next="2">다음</button>
+    </section>
+
+    <!-- Page 2 -->
+    <section class="page" id="page-2">
+      <canvas id="canvas-2"></canvas>
+      <div class="text-overlay">
+        <p class="typing-text" data-text="생일이지만 양배추를 팔러 나온 우리!!"></p>
+      </div>
+      <button class="next-btn" data-next="3">다음</button>
+    </section>
+
+    <!-- Page 3 -->
+    <section class="page" id="page-3">
+      <canvas id="canvas-3"></canvas>
+      <div class="text-overlay">
+        <p class="typing-text" data-text="내가 더 열심히 팔아서 미미는 놀고먹게 해줄꺼야!! 조금만 기다려"></p>
+      </div>
+      <button class="next-btn" data-next="4">다음</button>
+    </section>
+
+    <!-- Page 4 -->
+    <section class="page" id="page-4">
+      <canvas id="canvas-4"></canvas>
+      <div class="text-overlay">
+        <p class="typing-text" data-text="타랑해"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/pixel-engine.js"></script>
+  <script src="js/scenes/scene1.js"></script>
+  <script src="js/scenes/scene2.js"></script>
+  <script src="js/scenes/scene3.js"></script>
+  <script src="js/scenes/scene4.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
