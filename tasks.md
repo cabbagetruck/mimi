@@ -10,10 +10,10 @@
 - [x] 스프라이트 데이터 정의 (남자, 여자, 양배추, 케이크, 촛불 등) → pixel-engine.js에 포함
 
 ## Phase 3: 씬 구현 (하나씩 리뷰 후 진행)
-- [x] js/scenes/scene1.js — 케이크 위의 남자 (촛불 일렁임, 손 흔들기) → 리뷰 대기
-- [ ] js/scenes/scene2.js — 양배추 트럭 (클로즈업 연출)
-- [ ] js/scenes/scene3.js — 양배추 피라미드 (반짝 이펙트)
-- [ ] js/scenes/scene4.js — 무한 줌 타랑해 양배추 (듀얼 레이어 줌 루프)
+- [x] js/scenes/scene1.js — 케이크 위의 남자 (촛불 일렁임, 손 흔들기)
+- [x] js/scenes/scene2.js — 양배추 트럭 (클로즈업 연출, 눈감기, 눈물)
+- [x] js/scenes/scene3.js — 양배추 피라미드 (반짝 이펙트, mimi.png 이미지 통합)
+- [x] js/scenes/scene4.js — 무한 줌 타랑해 양배추 (듀얼 레이어 줌 루프) → 리뷰 대기
 
 ## Phase 4: 통합 & 폴리시
 - [ ] 전체 플로우 연결 테스트 (1p→2p→3p→4p)

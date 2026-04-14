@@ -13,38 +13,64 @@
 </head>
 <body>
   <div id="app">
-    <!-- Page 1 -->
+    <!-- Page 1: next only -->
     <section class="page active" id="page-1">
       <canvas id="canvas-1"></canvas>
       <div class="text-overlay">
         <p class="typing-text" data-text="미미 생일축하해!"></p>
       </div>
-      <button class="next-btn" data-next="2">다음</button>
+      <div class="nav-row">
+        <span class="nav-spacer"></span>
+        <button class="nav-btn nav-next" data-go="2" aria-label="다음">
+          <svg viewBox="0 0 16 16"><polygon points="4,2 12,8 4,14"/></svg>
+        </button>
+      </div>
     </section>
 
-    <!-- Page 2 -->
+    <!-- Page 2: prev + next -->
     <section class="page" id="page-2">
       <canvas id="canvas-2"></canvas>
       <div class="text-overlay">
         <p class="typing-text" data-text="생일이지만 양배추를 팔러 나온 우리!!"></p>
       </div>
-      <button class="next-btn" data-next="3">다음</button>
+      <div class="nav-row">
+        <button class="nav-btn nav-prev" data-go="1" aria-label="이전">
+          <svg viewBox="0 0 16 16"><polygon points="12,2 4,8 12,14"/></svg>
+        </button>
+        <button class="nav-btn nav-next" data-go="3" aria-label="다음">
+          <svg viewBox="0 0 16 16"><polygon points="4,2 12,8 4,14"/></svg>
+        </button>
+      </div>
     </section>
 
-    <!-- Page 3 -->
+    <!-- Page 3: prev + next -->
     <section class="page" id="page-3">
       <canvas id="canvas-3"></canvas>
+      <span class="mimi-caption">귤까먹는 미미</span>
       <div class="text-overlay">
         <p class="typing-text" data-text="내가 더 열심히 팔아서 미미는 놀고먹게 해줄꺼야!! 조금만 기다려"></p>
       </div>
-      <button class="next-btn" data-next="4">다음</button>
+      <div class="nav-row">
+        <button class="nav-btn nav-prev" data-go="2" aria-label="이전">
+          <svg viewBox="0 0 16 16"><polygon points="12,2 4,8 12,14"/></svg>
+        </button>
+        <button class="nav-btn nav-next" data-go="4" aria-label="다음">
+          <svg viewBox="0 0 16 16"><polygon points="4,2 12,8 4,14"/></svg>
+        </button>
+      </div>
     </section>
 
-    <!-- Page 4 -->
+    <!-- Page 4: prev only -->
     <section class="page" id="page-4">
       <canvas id="canvas-4"></canvas>
       <div class="text-overlay">
         <p class="typing-text" data-text="타랑해"></p>
+      </div>
+      <div class="nav-row">
+        <button class="nav-btn nav-prev" data-go="3" aria-label="이전">
+          <svg viewBox="0 0 16 16"><polygon points="12,2 4,8 12,14"/></svg>
+        </button>
+        <span class="nav-spacer"></span>
       </div>
     </section>
   </div>

@@ -24,16 +24,24 @@ function startTyping(pageEl, onComplete) {
   }, 100);
 }
 
-// Show the next button after typing completes
-function showButton(pageEl) {
-  const btn = pageEl.querySelector('.next-btn');
-  if (btn) {
+// Show nav buttons after typing completes
+function showButtons(pageEl) {
+  pageEl.querySelectorAll('.nav-btn').forEach(btn => {
     btn.classList.add('visible');
-  }
+  });
+}
+
+// Hide nav buttons
+function hideButtons(pageEl) {
+  pageEl.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.classList.remove('visible');
+  });
 }
 
 // Navigate to a page
 function goToPage(num) {
+  if (num < 1 || num > 4) return;
+
   // Stop current scene
   if (scenes[currentPage] && scenes[currentPage].stop) {
     scenes[currentPage].stop();
@@ -46,10 +54,7 @@ function goToPage(num) {
   // Hide current
   const currentEl = document.getElementById(`page-${currentPage}`);
   currentEl.classList.remove('active');
-
-  // Reset button visibility
-  const prevBtn = currentEl.querySelector('.next-btn');
-  if (prevBtn) prevBtn.classList.remove('visible');
+  hideButtons(currentEl);
 
   // Show next
   currentPage = num;
@@ -64,7 +69,7 @@ function goToPage(num) {
   // Start typing after a short delay
   setTimeout(() => {
     startTyping(nextEl, () => {
-      showButton(nextEl);
+      showButtons(nextEl);
     });
   }, 500);
 }
@@ -76,11 +81,11 @@ function initApp() {
     scene.init();
   }
 
-  // Bind next buttons
-  document.querySelectorAll('.next-btn').forEach(btn => {
+  // Bind all nav buttons (prev and next)
+  document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const nextPage = parseInt(btn.dataset.next);
-      goToPage(nextPage);
+      const target = parseInt(btn.dataset.go);
+      goToPage(target);
     });
   });
 
@@ -91,7 +96,7 @@ function initApp() {
   }
   setTimeout(() => {
     startTyping(page1, () => {
-      showButton(page1);
+      showButtons(page1);
     });
   }, 500);
 }

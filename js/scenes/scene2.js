@@ -408,23 +408,32 @@
     const headY = torsoY - 2 - headH;
     drawRect(ctx, x - 5, headY, 10, headH, S);
 
-    // Hair - wavy bob
-    drawRect(ctx, x - 6, headY - 3, 12, 5, HAIR);
-    drawRect(ctx, x - 7, headY, 3, 10, HAIR);
-    drawRect(ctx, x + 5, headY, 3, 10, HAIR);
-    drawRect(ctx, x - 6, headY - 1, 12, 3, HAIR);
-    // Wave texture
-    drawPixel(ctx, x - 7, headY + 3, '#4A3528');
-    drawPixel(ctx, x - 6, headY + 5, '#4A3528');
-    drawPixel(ctx, x - 7, headY + 7, '#4A3528');
-    drawPixel(ctx, x + 6, headY + 3, '#4A3528');
+    // Hair - triangle kimbap shape: rounded top, flares out to sides
+    // Top crown (rounded)
+    drawRect(ctx, x - 4, headY - 4, 8, 2, HAIR);   // top center
+    drawRect(ctx, x - 5, headY - 3, 10, 2, HAIR);   // slightly wider
+    drawRect(ctx, x - 6, headY - 1, 12, 3, HAIR);   // full width at crown
+    // Sides flaring outward as they go down (triangle shape)
+    drawRect(ctx, x - 7, headY + 1, 3, 3, HAIR);    // left upper side
+    drawRect(ctx, x - 8, headY + 4, 4, 3, HAIR);    // left mid — wider
+    drawRect(ctx, x - 9, headY + 7, 5, 3, HAIR);    // left lower — widest
+    drawRect(ctx, x - 10, headY + 9, 5, 3, HAIR);   // left bottom flare
+    drawRect(ctx, x + 5, headY + 1, 3, 3, HAIR);    // right upper side
+    drawRect(ctx, x + 5, headY + 4, 4, 3, HAIR);    // right mid
+    drawRect(ctx, x + 5, headY + 7, 5, 3, HAIR);    // right lower
+    drawRect(ctx, x + 6, headY + 9, 5, 3, HAIR);    // right bottom flare
+    // Wave texture on sides
+    drawPixel(ctx, x - 8, headY + 5, '#4A3528');
+    drawPixel(ctx, x - 9, headY + 8, '#4A3528');
+    drawPixel(ctx, x - 8, headY + 10, '#4A3528');
     drawPixel(ctx, x + 7, headY + 5, '#4A3528');
-    drawPixel(ctx, x + 6, headY + 7, '#4A3528');
-    // Wave curls at ends
-    drawPixel(ctx, x - 8, headY + 9, HAIR);
-    drawPixel(ctx, x - 7, headY + 10, HAIR);
-    drawPixel(ctx, x + 7, headY + 9, HAIR);
-    drawPixel(ctx, x + 8, headY + 10, HAIR);
+    drawPixel(ctx, x + 8, headY + 8, '#4A3528');
+    drawPixel(ctx, x + 9, headY + 10, '#4A3528');
+    // Wave curl tips at bottom
+    drawPixel(ctx, x - 10, headY + 12, HAIR);
+    drawPixel(ctx, x - 9, headY + 12, HAIR);
+    drawPixel(ctx, x + 10, headY + 12, HAIR);
+    drawPixel(ctx, x + 9, headY + 12, HAIR);
 
     // Eyes - droopy, long lashes
     const eyeY = headY + 4;
@@ -484,20 +493,30 @@
     // Face
     drawRect(ctx, fx - 5, fy - 5, 10, 10, S);
 
-    // Hair
-    drawRect(ctx, fx - 6, fy - 8, 12, 5, HAIR);
-    drawRect(ctx, fx - 7, fy - 4, 3, 10, HAIR);
-    drawRect(ctx, fx + 5, fy - 4, 3, 10, HAIR);
+    // Hair - triangle kimbap shape (closeup version)
+    // Rounded top
+    drawRect(ctx, fx - 4, fy - 9, 8, 2, HAIR);
+    drawRect(ctx, fx - 5, fy - 8, 10, 2, HAIR);
     drawRect(ctx, fx - 6, fy - 6, 12, 3, HAIR);
-    // Wave
-    drawPixel(ctx, fx - 7, fy - 1, '#4A3528');
-    drawPixel(ctx, fx - 6, fy + 1, '#4A3528');
-    drawPixel(ctx, fx - 7, fy + 3, '#4A3528');
-    drawPixel(ctx, fx + 6, fy - 1, '#4A3528');
-    drawPixel(ctx, fx + 7, fy + 1, '#4A3528');
-    drawPixel(ctx, fx + 6, fy + 3, '#4A3528');
-    drawPixel(ctx, fx - 8, fy + 5, HAIR);
-    drawPixel(ctx, fx + 7, fy + 5, HAIR);
+    // Sides flaring out
+    drawRect(ctx, fx - 7, fy - 4, 3, 3, HAIR);
+    drawRect(ctx, fx - 8, fy - 1, 4, 3, HAIR);
+    drawRect(ctx, fx - 9, fy + 2, 5, 3, HAIR);
+    drawRect(ctx, fx - 10, fy + 5, 5, 3, HAIR);
+    drawRect(ctx, fx + 5, fy - 4, 3, 3, HAIR);
+    drawRect(ctx, fx + 6, fy - 1, 4, 3, HAIR);
+    drawRect(ctx, fx + 6, fy + 2, 5, 3, HAIR);
+    drawRect(ctx, fx + 6, fy + 5, 5, 3, HAIR);
+    // Wave texture
+    drawPixel(ctx, fx - 8, fy, '#4A3528');
+    drawPixel(ctx, fx - 9, fy + 3, '#4A3528');
+    drawPixel(ctx, fx - 10, fy + 6, '#4A3528');
+    drawPixel(ctx, fx + 7, fy, '#4A3528');
+    drawPixel(ctx, fx + 8, fy + 3, '#4A3528');
+    drawPixel(ctx, fx + 9, fy + 6, '#4A3528');
+    // Curl tips
+    drawPixel(ctx, fx - 10, fy + 8, HAIR);
+    drawPixel(ctx, fx + 10, fy + 8, HAIR);
 
     // Eyes with closing animation
     const eyeY = fy - 1;

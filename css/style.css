@@ -60,6 +60,20 @@ html, body {
   image-rendering: crisp-edges;
 }
 
+/* ===== Mimi Caption ===== */
+.mimi-caption {
+  position: absolute;
+  z-index: 10;
+  left: 27%;
+  bottom: 26%;
+  font-family: 'DungGeunMo', monospace;
+  font-size: clamp(12px, 3.5vw, 16px);
+  color: #F8F8F8;
+  text-shadow: 1px 1px 0 #181818, -1px -1px 0 #181818;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
 /* ===== Text Overlay ===== */
 .text-overlay {
   position: relative;
@@ -101,41 +115,62 @@ html, body {
   51%, 100% { opacity: 0; }
 }
 
-/* ===== Next Button ===== */
-.next-btn {
+/* ===== Navigation Row ===== */
+.nav-row {
   position: relative;
   z-index: 10;
-  font-family: 'DungGeunMo', monospace;
-  font-size: clamp(16px, 4.5vw, 22px);
-  color: #181818;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 28px;
+  margin-bottom: 32px;
+}
+
+.nav-spacer {
+  width: 48px; /* same as button to hold space */
+}
+
+/* ===== Arrow Buttons (pixel art) ===== */
+.nav-btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
   background: #F0D020;
   border: none;
-  padding: 12px 48px;
-  margin-bottom: 32px;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.4s ease;
-  /* Pixel border effect */
+  image-rendering: pixelated;
+  /* Pixel border */
   box-shadow:
-    4px 0 0 0 #A06020,
-    -4px 0 0 0 #A06020,
-    0 4px 0 0 #A06020,
-    0 -4px 0 0 #A06020,
-    4px 4px 0 0 #181818,
-    -4px -4px 0 0 #181818,
-    4px -4px 0 0 #181818,
-    -4px 4px 0 0 #181818;
+    3px 0 0 0 #A06020,
+    -3px 0 0 0 #A06020,
+    0 3px 0 0 #A06020,
+    0 -3px 0 0 #A06020,
+    3px 3px 0 0 #181818,
+    -3px -3px 0 0 #181818,
+    3px -3px 0 0 #181818,
+    -3px 3px 0 0 #181818;
 }
 
-.next-btn.visible {
+.nav-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #181818;
+  image-rendering: pixelated;
+  /* Crisp pixel edges on the arrow shape */
+  shape-rendering: crispEdges;
+}
+
+.nav-btn.visible {
   opacity: 1;
 }
 
-.next-btn:active {
+.nav-btn:active {
   transform: translate(2px, 2px);
   box-shadow:
-    2px 0 0 0 #A06020,
-    -2px 0 0 0 #A06020,
-    0 2px 0 0 #A06020,
-    0 -2px 0 0 #A06020;
+    1px 0 0 0 #A06020,
+    -1px 0 0 0 #A06020,
+    0 1px 0 0 #A06020,
+    0 -1px 0 0 #A06020;
 }
