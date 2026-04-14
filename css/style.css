@@ -139,6 +139,7 @@ html, body {
   border: none;
   cursor: pointer;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.4s ease;
   image-rendering: pixelated;
   /* Pixel border */
@@ -164,6 +165,7 @@ html, body {
 
 .nav-btn.visible {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .nav-btn:active {
